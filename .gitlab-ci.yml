@@ -1,0 +1,29 @@
+stages:
+  - check_files_stage
+  - start_project_stage
+
+variables:
+  log_file: logfile.txt
+
+default:
+  artifacts:
+    paths:
+      - $log_file
+
+check_files:
+  stage: check_files_stage
+  tags: [serv1]
+  script:
+   - ls -la
+   - whoami
+   - pwd
+   - echo "Check files success" >> $log_file
+
+start_project:
+  stage: start_project_stage
+  tags: [serv1]
+  script:
+    - cd ./winter-deploy
+    - docker-compose up -d 
+    - echo "Start project" >> $log_file
+    - cat $log_file
