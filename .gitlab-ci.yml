@@ -23,7 +23,6 @@ start_project:
   stage: start_project_stage
   tags: [serv1]
   script:
-    - cd ./winter-deploy
     - docker-compose up -d 
     - echo "Start project" >> $log_file
     - cat $log_file
