@@ -23,7 +23,7 @@ start_project:
   stage: start_project_stage
   tags: [serv1]
   script:
-    - docker built -t winter-app .
+    - docker build -t winter-app .
     - docker-compose up -d 
     - echo "Start project" >> $log_file
     - cat $log_file
