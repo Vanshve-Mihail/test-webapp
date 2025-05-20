@@ -11,7 +11,6 @@ services:
       - "8080:80"
     volumes:
       - .:/var/www/html
-      # Исключаем монтирование vendor, чтобы не перезаписывать установленные зависимости
       - /var/www/html/vendor
     networks:
       - winter_network
