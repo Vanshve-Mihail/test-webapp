@@ -23,6 +23,7 @@ start_project:
   stage: start_project_stage
   tags: [serv1]
   script:
+    - dos2unix setup.sh
     - sh setup.sh
     - echo "Start project" >> $log_file
     - cat $log_file
