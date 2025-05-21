@@ -15,7 +15,7 @@ echo "Настройка .env файла"
 if [ ! -f "$ENV_FILE" ]; then
     docker exec winter_app php artisan winter:env
 fi
-echo "Создание папок и настройка прав доступа..."
+echo "Создание папок и настройка прав доступа"
 docker exec winter_app bash -c '
 mkdir -p /var/www/html/storage/logs \
 && mkdir -p /var/www/html/storage/framework/cache/data \
